@@ -10,12 +10,12 @@ public class SearchStepdefs {
         //
     }
 
-    @When("Search a keyword {String}")
+    @When("Search a keyword {string}")
     public void searchKeyword(String keyword) {
         //
     }
 
-    @Then("Should see {String} in the list item")
+    @Then("Should see {string} in the list item")
     public void shouldSeeInListItem(String keyWord) {
         //
     }
