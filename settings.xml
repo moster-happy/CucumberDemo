@@ -1,0 +1,18 @@
+<settings>
+    <pluginGroups>
+        <pluginGroup>my.setel</pluginGroup>
+    </pluginGroups>
+    <servers>
+        <server>
+            <id>maven</id>
+            <configuration>
+                <httpHeaders>
+                    <property>
+                        <name>Deploy-Token</name>
+                        <value>${env.GET_DEPENDENCIES_TOKEN}</value>
+                    </property>
+                </httpHeaders>
+            </configuration>
+        </server>
+    </servers>
+</settings>
