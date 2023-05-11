@@ -1,17 +1,25 @@
 package com.demo.cucumber.stepDefinition;
 
+import com.demo.cucumber.Hook;
+import com.demo.cucumber.core.BaseSteps;
 import com.demo.cucumber.pages.CommonPage;
+import com.demo.cucumber.pages.HomePage;
+import com.demo.cucumber.pages.PageGeneratorManager;
 import io.cucumber.java.en.Given;
+import org.openqa.selenium.WebDriver;
 
-public class CommonStepsDef extends BaseDef {
-    public CommonStepsDef(){
-        super();
+public class CommonStepsDef extends BaseSteps {
+    private CommonPage commonPage;
+    private HomePage homePage;
+    private WebDriver driver;
+    public CommonStepsDef() {
+        this.driver = Hook.openAndQuitBrowser();
+        commonPage = PageGeneratorManager.getCommonPage(driver);
+        homePage = PageGeneratorManager.getHomePage(driver);
     }
-     public CommonPage commonPage;
+
     @Given("Open website")
     public void openWebsite() {
-        commonPage = new CommonPage(action);
         commonPage.navigateToHomePage("https://www.saucedemo.com/");
-        System.out.println("Open website successful");
     }
 }
