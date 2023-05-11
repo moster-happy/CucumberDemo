@@ -58,6 +58,7 @@ public class Hook {
 
     @After
     public void cleanup() {
+        close();
         System.out.println("After Suite");
     }
 }
