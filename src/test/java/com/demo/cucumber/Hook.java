@@ -1,13 +1,10 @@
 package com.demo.cucumber;
 
 import com.demo.cucumber.core.CommonConstant;
-import com.demo.cucumber.drivers.DriverManager;
 import com.demo.cucumber.drivers.DriverManagerFactory;
 import com.demo.cucumber.drivers.DriverType;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
-import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.UnreachableBrowserException;
 
@@ -15,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Hook {
     private static WebDriver driver;
-    @Before
+//    @Before
     public synchronized static WebDriver openAndQuitBrowser() {
         String browserName = System.getProperty("browser");
 

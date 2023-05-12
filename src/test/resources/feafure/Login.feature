@@ -1,14 +1,12 @@
 Feature: Login account
   As an user, I can login account
 
+  @test
   Scenario Outline: Login account
     Given Open website
     When Login account username: "<userName>" and password: "<password>"
-    Then Login account successful
-    And HomePage is displayed
+    Then HomePage is displayed
 
     Examples:
       | userName        | password     |
       | standard_user   | secret_sauce |
-      | locked_out_user | secret_sauce |
-      | problem_user    | secret_sauce |

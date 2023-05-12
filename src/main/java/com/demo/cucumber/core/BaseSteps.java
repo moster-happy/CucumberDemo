@@ -1,6 +1,4 @@
 package com.demo.cucumber.core;
-
-import com.demo.cucumber.WebKeywords.WebKeywords;
 import org.openqa.selenium.WebDriver;
 
 public class BaseSteps extends BasePage {
