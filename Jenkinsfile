@@ -1,9 +1,6 @@
 pipeline {
     agent any
-    options {
-        // Timeout counter starts AFTER agent is allocated
-        timeout(time: 1, unit: 'SECONDS')
-    }
+
     stages {
         stage('clean') {
             steps {
@@ -14,19 +11,21 @@ pipeline {
             steps {
                 bat "mvn clean test"
             }
-        }
-        post {
-            always{
-                script{
+
+            post {
+                always{
+                    script{
                     allure([
                         includeProperties: false,
                         jdk: '',
                         properties: [],
-                        reportBuildPolicy: "ALWAYS",
+                        reportBuildPolicy: 'ALWAYS',
                         results: [[path: 'target/allure-results']]
-                        ])
+                    ])
+                    }
                 }
             }
         }
+
     }
 }
